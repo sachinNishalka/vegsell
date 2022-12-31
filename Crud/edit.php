@@ -1,6 +1,8 @@
 <?php include '../include/sessionstart.php'; ?>
 <?php include '../include/dbinit.php'; ?>
 
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,6 +23,30 @@ include '../include/menu.php';
     <h1>Edit your adds</h1>
 </center>
 
+<?php
+    if (isset($_GET["message"])){
+//        print_r($_GET);
+        if ($_GET["message"]=='success'){
+            echo
+            "<div class='alert alert-warning alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Congratulations!</strong> You successfully updated your ad!
+  </div>";
+        }else{
+            echo
+            "<div class='alert alert-danger alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Sorry!</strong> You cound`t update the ad!
+  </div>";
+        }
+    }
+?>
+
+
+
+
+
+
 <div class="container">
     <table class="table table-hover">
         <thead>
@@ -30,6 +56,7 @@ include '../include/menu.php';
             <th>Amount</th>
             <th>Contact</th>
             <th>Description</th>
+            <th>Actions</th>
         </tr>
         </thead>
 
@@ -46,12 +73,24 @@ include '../include/menu.php';
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
+                $postid = $row["id"];
                 echo "    <tr> 
                                 <td>".$row["vgname"]."</td>
                                 <td>".$row["quentity"]."</td>
                                 <td>".$row["amount"]."</td>
                                 <td>".$row["contact"]."</td>
                                 <td>".$row["description"]."</td>
+                               
+
+
+                                <td>
+                                    <a href='update.php?post_id=$postid' class='btn btn-warning'>Update</a>
+                                    
+                                    
+                                    
+                                    
+                                    <a href='' class='btn btn-danger' style='color: white'>Delete</a>
+                                </td>
                              </tr>";
             }
         } else {

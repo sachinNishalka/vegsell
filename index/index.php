@@ -52,6 +52,7 @@ include '../include/menu.php';
                                 <td>".$row["amount"]."</td>
                                 <td>".$row["contact"]."</td>
                                 <td>".$row["description"]."</td>
+                               
                              </tr>";
             }
         } else {

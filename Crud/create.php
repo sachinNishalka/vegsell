@@ -48,7 +48,7 @@
                 echo
                 "<div class='alert alert-success alert-dismissible' role='alert'>
 <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-<strong>Congratulations!</strong> You successfully created your add!
+<strong>Congratulations!</strong> You successfully created your ad!
   </div>";
 
 
@@ -57,7 +57,7 @@
                 echo
                 "<div class='alert alert-danger alert-dismissible' role='alert'>
 <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-<strong>Sorry!</strong> You cound`t create the add!
+<strong>Sorry!</strong> You cound`t create the ad!
   </div>";
             }
         }
