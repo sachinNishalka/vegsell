@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-light navbar-light">
-	<a class="navbar-brand" href="../index">WELCOME MAIN PAGE</a>
+	<a class="navbar-brand" href="../index">Govipala.shop</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -7,7 +7,7 @@
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav">
 			<li class="nav-item active"><a class="nav-link" href="../index">Home</a></li>
-			<li class="nav-item"><a class="nav-link" href="../user">User</a></li>
+<!--			<li class="nav-item"><a class="nav-link" href="../user">User</a></li>-->
 <!--			<li class="nav-item"><a class="nav-link" href="../item">Item</a></li>-->
 
 
@@ -61,7 +61,7 @@
 
 	
 			if($_SESSION["usertype"]==="user"){
-			echo "Im user";
+			echo "<span class='badge badge'>Regualar User</span>";
 
 
             }
@@ -72,9 +72,9 @@
 
 
 					
-					echo '<li class="nav-item"><a class="nav-link" href="#">'.$_SESSION["user"].'</a></li>';
+					echo '<li class="nav-item"><a class="nav-link" href="#">Hi 👨'.$_SESSION["user"].'</a></li>';
 					
-					echo '<li class="nav-item"><a class="nav-link" href="../login/logoutaction.php">Logout</a></li>';
+					echo '<li class="nav-item"><a class="nav-link btn btn-danger" href="../login/logoutaction.php">Logout</a></li>';
 				
 				
 		

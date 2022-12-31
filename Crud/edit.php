@@ -25,14 +25,15 @@ include '../include/menu.php';
 
 <?php
     if (isset($_GET["message"])){
-//        print_r($_GET);
+
         if ($_GET["message"]=='success'){
             echo
             "<div class='alert alert-warning alert-dismissible' role='alert'>
 <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 <strong>Congratulations!</strong> You successfully updated your ad!
   </div>";
-        }else{
+        }
+        else{
             echo
             "<div class='alert alert-danger alert-dismissible' role='alert'>
 <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
@@ -40,6 +41,24 @@ include '../include/menu.php';
   </div>";
         }
     }
+
+    if (isset($_GET["delete"])){
+    if($_GET["delete"]=='success'){
+            echo
+            "<div class='alert alert-warning alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Congratulations!</strong> You successfully deleted your ad!
+  </div>";
+        }elseif ($_GET["delete"]=='error'){
+            echo
+            "<div class='alert alert-danger alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Sorry!</strong> You cound`t delete the ad!
+  </div>";
+        }
+    }
+
+
 ?>
 
 
@@ -89,7 +108,7 @@ include '../include/menu.php';
                                     
                                     
                                     
-                                    <a href='' class='btn btn-danger' style='color: white'>Delete</a>
+                                    <a href='delete.php?post_id=$postid' class='btn btn-danger' style='color: white'>Delete</a>
                                 </td>
                              </tr>";
             }

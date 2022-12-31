@@ -16,6 +16,24 @@
 			include '../include/menu.php';
 			//var_dump($_SESSION);
 		?>
+
+    <?php
+        if (isset($_GET["reg"])){
+            if ($_GET['reg']==='success'){
+                echo
+                "<div class='alert alert-info alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Congratulations!</strong> You successfully registered your account!
+  </div>";
+            }else{
+                echo
+                "<div class='alert alert-danger alert-dismissible' role='alert'>
+<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+<strong>Sorry!</strong> You cound`t register the account!
+  </div>";
+            }
+        }
+    ?>
 		<div class="container">		
 			<h2>Login</h2>	
 			<?php 
@@ -36,8 +54,10 @@
 				</div>
 				
 				<button class="btn btn-warning" type="reset" >Reset</button>&nbsp;
-				<button class="btn btn-success" type="submit" >Login</button>			
-			</form>			 
+				<button class="btn btn-success" type="submit" >Login</button>
+                <a href="./register.php" class="btn btn-info">Register</a>
+
+			</form>
 		</div>
 		<script src="../js/jquery.min.js" ></script>
 		<script src="../js/bootstrap.min.js" ></script>
