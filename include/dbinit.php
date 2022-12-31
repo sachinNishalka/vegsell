@@ -3,9 +3,9 @@
 <?php 
 //Database Configuration-----------------------------------------------
 	$dbServerName = "localhost";
-	$dbUserName = "root";
-	$dbPassword = "";
-	$dbName = "mydb";
+	$dbUserName = "u996882231_janith";
+	$dbPassword = "Janith123";
+	$dbName = "u996882231_mydb";
 
 	// Create connection
 	$conn = new mysqli($dbServerName, $dbUserName, $dbPassword, $dbName);
