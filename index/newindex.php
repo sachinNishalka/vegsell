@@ -6,10 +6,12 @@
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>Govipala.Store</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
 
     <style>
         body {
@@ -392,13 +394,13 @@
 
         .custom-button {
             width: 100%;
-            color: #fff;
+            color: rgba(255, 255, 255, 0);
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.8s ease;
             background: #4DA0B0;
             background: -webkit-linear-gradient(to right, #D39D38, #4DA0B0);
-            background: linear-gradient(to right, #FF5722, #3f51b5);
+            background: linear-gradient(to right, #12d400);
         }
 
         .custom-button:hover,
@@ -406,7 +408,7 @@
             transition: 0.8s ease;
             letter-spacing: 3px;
             background: -webkit-linear-gradient(to right, #D39D38, #4DA0B0);
-            background: linear-gradient(to right, #FF5722, #3f51b5);
+            background: linear-gradient(to right, #12d400);
         }
 
         .form-box-inner .form-control {
@@ -434,7 +436,7 @@
         }
 
         .contact-box {
-            background: #ffffff8a;
+            background: #0000008a;
             height: 365px;
             padding: 15px;
         }
@@ -466,7 +468,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index/newindex.php">GoviPala</a>
+            <a class="navbar-brand" href="../index/newindex.php">GoviPola</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
