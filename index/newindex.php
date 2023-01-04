@@ -466,11 +466,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../index">GoviPala</a>
+            <a class="navbar-brand" href="../index/newindex.php">GoviPala</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../index">HOME</a></li>
+                <li><a href="../index/newindex.php">HOME</a></li>
                 <li><a href="#STORE">STORE</a></li>
                 <li><a href="#TEAM">TEAM</a></li>
                 <li><a href="#CONTACT">CONTACT</a></li>
