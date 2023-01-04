@@ -2,7 +2,7 @@
 
 <?php 
 //Database Configuration-----------------------------------------------
-	$dbServerName = "localhost";
+	$dbServerName = "156.67.72.151";
 	$dbUserName = "u996882231_janith";
 	$dbPassword = "Janith123";
 	$dbName = "u996882231_mydb";

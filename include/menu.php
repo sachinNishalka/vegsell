@@ -6,7 +6,7 @@
   
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="../index">Home</a></li>
+			<li class="nav-item active"><a class="nav-link" href="../index/newindex.php">Home</a></li>
 <!--			<li class="nav-item"><a class="nav-link" href="../user">User</a></li>-->
 <!--			<li class="nav-item"><a class="nav-link" href="../item">Item</a></li>-->
 
