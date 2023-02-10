@@ -1,5 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light " style="background-color: #ADE792 !important;">
-  <div class="container">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light mb-5" style="background-color: #ADE792 !important;">
+  <div class="container mb-auto">
     <a class="navbar-brand" href="#">Vegitable Shop</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -2,18 +2,16 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css" >
-
-		<title>Login</title>
+		 <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../index/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Vegitable Shop</title>
 	</head>
 	<body>
 		<?php
-			include '../include/menu.php';
+			include '../include/finalmenu.php';
 			//var_dump($_SESSION);
 		?>
 
@@ -34,8 +32,11 @@
             }
         }
     ?>
-		<div class="container">		
-			<h2>Login</h2>	
+		<div class="container mt-5">	
+			<center>
+				<h2 class="mt-5">Login</h2>
+			</center>	
+				
 			<?php 
 				if(isset($_SESSION["messege"])){
 					echo '<h5 class="bg-danger">'.$_SESSION["messege"].'</h5>';	
@@ -53,14 +54,13 @@
 					<input class="form-control" type="text" name="password" id="password" />
 				</div>
 				
-				<button class="btn btn-warning" type="reset" >Reset</button>&nbsp;
-				<button class="btn btn-success" type="submit" >Login</button>
-                <a href="./register.php" class="btn btn-info">Register</a>
+				<button class="btn btn-warning mt-2" type="reset" >Reset</button>&nbsp;
+				<button class="btn btn-success mt-2" type="submit" >Login</button>
+                <a href="./register.php" class="btn btn-info mt-2">Register</a>
 
 			</form>
 		</div>
-		<script src="../js/jquery.min.js" ></script>
-		<script src="../js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 	</body>
 </html>
 

@@ -111,7 +111,7 @@
 
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl- mt-3 mb-2">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl- mt-3 mb-2">
       
 
 <div class="sellbuy-area">
@@ -119,7 +119,7 @@
     <div class="sellbuy-area-content">
       <h1>Sell Your Vegitables</h1>
       <p>Srilanka First Online Vegitable Market.</p>
-      <button class="btn btn-success" href="#">Sell Vegitables</button>
+      <a class="btn btn-success" href="../login">Sell Vegitables</a>
     </div>
   </div>
 </div>
@@ -129,24 +129,10 @@
 
     </div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-3 mb-2">
-      
 
 
 
-<div class="sellbuy-area1">
-  <div class="content-sellbuy-area">
-    <div class="sellbuy-area-content">
-      <h1>Buy Your Vegitables</h1>
-      <p>Srilanka First Online Vegitable Market.</p>
-      <button class="btn btn-success" href="#">Buy Vegitables</button>
-    </div>
-  </div>
-</div>
-
-
-
-    </div>
+  
   </div>
 </div>
 
