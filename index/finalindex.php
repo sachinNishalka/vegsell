@@ -42,115 +42,65 @@
     </div>
     <hr>
     
-    <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
+    
 
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
+     <?php
+//                print_r($_SESSION);
+               
+//                echo "<br>" . $uid. "</br>";
+                $sql = "SELECT * FROM ads";
+                $result = $conn->query($sql);
+
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+
+                    echo '<div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
+  <img src="../uploads/'.$row["img"].'" class="card-img-top" alt="tomato">
   <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
+    <h5 class="card-title">'.$row["vgname"].'</h5>
+    <p class="card-text">'.$row["description"].'</p>
+    <h5 class="card-title">1KG - Rs:'.$row["amount"].'/=</h5>
+    <h6 class="card-title">Contact : '.$row["contact"].'</h6>
+   
   </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
-  <div class="card col-12 col-sm-12 col-md-6 col-lg-4 col-lg-3 mb-3 mt-3 mx-auto" style="width: 18rem;">
-  <img src="./img/tomato.jpg" class="card-img-top" alt="tomato">
-  <div class="card-body">
-    <h5 class="card-title">Tomato</h5>
-    <p class="card-text">Fresh, red, round or oblong, juicy, high in vitamin C, versatile, used in many dishes, grown in warm climates, summertime favorite, good for salads and sauces.</p>
-    <h5 class="card-title">1KG - Rs:100/=</h5>
-    <a href="#" class="btn btn-success">Buy or Sell</a>
-  </div>
-  </div>
+  </div>';
+
+
+
+
+
+
+
+
+                }
+            } else {
+                echo "0 results";
+            }
+            $conn->close();
+
+
+
+            ?>
+
+  
+
+
+
+
+  
+
+  
+
+
+  
+
+
+ 
+
+
+
 
   </div>
 </div>

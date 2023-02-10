@@ -12,21 +12,21 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#vs">Shop</a>
-        </li>
+        </li> -->
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">About</a>
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Contact</a>
-        </li>
+        </li> -->
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Vegitables</a>
-        </li>
+        </li> -->
 
 
        <!-- this line for backend link to naigation bar -->
@@ -43,7 +43,7 @@
                                     <li><a class="dropdown-item" href="../Crud/allads.php">View Ads</a></li>
                                     <li><a class="dropdown-item" href="../Crud/edit.php">Edit Ads</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    
                                 </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="../login/logoutaction.php">Logout</a></li>';

@@ -16,6 +16,7 @@ if(isset($_GET["post_id"])) {
             $amount = $row["amount"];
             $contact = $row["contact"];
             $description = $row["description"];
+            $img_name=$row["img"];
         }
     }
 
@@ -25,6 +26,60 @@ if(isset($_GET["post_id"])) {
 <?php
 
 if (isset($_POST['update'])){
+
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));                                     
+
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+        if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+        }
+
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        }
+
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+            } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        print_r($_SESSION);
     $pid = $_POST['postedid'];
     $vgname = $_POST["vgname"];
@@ -32,8 +87,9 @@ if (isset($_POST['update'])){
     $expected_amount = $_POST["expected_amount"];
     $contact = $_POST["contact"];
     $description = $_POST["description"];
+    
 //    $userid = $_SESSION["userid"];
-    $sql_update= "UPDATE ads SET vgname='".$vgname."', quentity='".$quentity."', amount='".$expected_amount."', contact='".$contact."', description='".$description."' WHERE id ='".$pid."'  ";
+    $sql_update= "UPDATE ads SET vgname='".$vgname."', quentity='".$quentity."', amount='".$expected_amount."', contact='".$contact."', description='".$description."', img='".$_FILES["fileToUpload"]["name"]."' WHERE id ='".$pid."'  ";
 //    $sql = "INSERT INTO ads(vgname,quentity,amount,contact,description,userid)VALUES('".$vgname."','".$quentity."','".$expected_amount."','".$contact."','".$description."','".$userid."')";
 
 
@@ -48,22 +104,20 @@ if (isset($_POST['update'])){
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" >
-
-    <title>Welcome</title>
+   <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../index/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Vegitable Shop</title>
 </head>
 <body>
 <?php
-include '../include/menu.php';
+include '../include/finalmenu.php';
 ?>
 
 <center>
-    <h1>Update your Advertisement Here</h1>
+    <h1 class="mt-5">Update your Advertisement Here</h1>
 
 
 </center>
@@ -117,8 +171,20 @@ if (isset($_POST['update'])){
         </div>
 
         <div class="form-group">
+            <label for="">Image</label>
+            <img src="../uploads/<?php echo $img_name?> " class="img-thumbnail mt-3" alt="..." style="width:200px">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="">New Image</label>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </div>
+
+        
+
+        <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-warning" name="update">Update</button>
+                <button type="submit" class="btn btn-warning mt-3" name="update">Update</button>
             </div>
         </div>
     </form>
@@ -127,7 +193,6 @@ if (isset($_POST['update'])){
 
 
 
-<script src="../js/jquery.min.js" ></script>
-<script src="../js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
