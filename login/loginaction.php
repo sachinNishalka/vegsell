@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
     $_SESSION["user"]=$row["fisrt_name"]. " " .$row["last_name"];
 	$_SESSION['usertype']=$row["usertype"];
 	
-	header("Location:../index");	
+	header("Location:../index/finalindex.php");	
 	
 
 		

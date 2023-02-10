@@ -2,8 +2,63 @@
 <?php include '../include/dbinit.php';?>
 <?php
 
+    $target_dir = "../uploads/";
+    
+
 //    print_r($_POST);
     if (isset($_POST['save'])){
+
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));                                     
+
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+        if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+        }
+
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        }
+
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            // if everything is ok, try to upload file
+            } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        print_r($_SESSION);
         $vgname = $_POST["vgname"];
         $quentity = $_POST["quentity"];
@@ -11,7 +66,7 @@
         $contact = $_POST["contact"];
         $description = $_POST["description"];
         $userid = $_SESSION["userid"];
-        $sql = "INSERT INTO ads(vgname,quentity,amount,contact,description,userid)VALUES('".$vgname."','".$quentity."','".$expected_amount."','".$contact."','".$description."','".$userid."')";
+        $sql = "INSERT INTO ads(vgname,quentity,amount,contact,description,userid,img)VALUES('".$vgname."','".$quentity."','".$expected_amount."','".$contact."','".$description."','".$userid."','".$_FILES["fileToUpload"]["name"]."')";
 
 
 
@@ -22,22 +77,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" >
-
-    <title>Welcome</title>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../index/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Vegitable Shop</title>
 </head>
 <body>
     <?php
-    include '../include/menu.php';
+    include '../include/finalmenu.php';
     ?>
 
     <center>
-        <h1>Create an add</h1>
+        <h1 class="mt-5">Create an add</h1>
 
 
     </center>
@@ -45,26 +98,25 @@
     <?php
         if (isset($_POST['save'])){
             if(mysqli_query($conn, $sql)){
-                echo
-                "<div class='alert alert-success alert-dismissible' role='alert'>
-<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-<strong>Congratulations!</strong> You successfully created your ad!
-  </div>";
+                echo'<div class="alert alert-success alert-dismissible">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Success!</strong> Ad is created.
+</div>';
 
 
 
             }else{
-                echo
-                "<div class='alert alert-danger alert-dismissible' role='alert'>
-<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-<strong>Sorry!</strong> You cound`t create the ad!
-  </div>";
+                echo '<div class="alert alert-danger alert-dismissible">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Success!</strong> Error occured when creating the Ad.
+</div>';
             }
         }
     ?>
 
     <div class="container">
-        <form class="form-horizontal" role="form" method="POST" action="create.php">
+
+        <form role="form" method="POST" action="create.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="col-sm-2 control-label">Vegetable Name</label>
                 <div class="col-sm-10">
@@ -96,18 +148,21 @@
                 </div>
             </div>
 
+            <input type="file" name="fileToUpload" id="fileToUpload">
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success" name="save">Save</button>
+                    <button type="submit" class="btn btn-success mt-2" name="save">Save</button>
                 </div>
             </div>
+
+
         </form>
 
     </div>
 
 
 
-<script src="../js/jquery.min.js" ></script>
-<script src="../js/bootstrap.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
