@@ -9,7 +9,7 @@
       <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll " style="--bs-scroll-height: 300px;">
         
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="../">Home</a>
         </li>
 
         <!-- <li class="nav-item">
