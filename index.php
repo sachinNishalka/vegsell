@@ -1,3 +1,3 @@
 <?php
-header('Location: ./index/index.php');
+header('Location: ./index/finalindex.php');
 ?>
